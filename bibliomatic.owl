@@ -1,0 +1,683 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/Biblioteca#"
+     xml:base="http://www.semanticweb.org/Biblioteca"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Biblioteca="http://www.semanticweb.org/Biblioteca#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/Biblioteca"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#Aparecen_en -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Biblioteca#Aparecen_en">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Biblioteca#Personajes"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Biblioteca#Libro"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#Apto_para -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Biblioteca#Apto_para">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Biblioteca#Libro"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Biblioteca#Publico"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#Es_interpretada_por -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Biblioteca#Es_interpretada_por">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Biblioteca#Libro"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Biblioteca#Personajes"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#Es_producido_por -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Biblioteca#Es_producido_por">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/Biblioteca#Produce_un"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Biblioteca#Libro"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Biblioteca#Editorial"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#Escribe_un -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Biblioteca#Escribe_un">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/Biblioteca#Escrito_por"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Biblioteca#Autor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Biblioteca#Libro"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#Escrito_por -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Biblioteca#Escrito_por">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Biblioteca#Libro"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Biblioteca#Autor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#Lanzado_en -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Biblioteca#Lanzado_en">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/Biblioteca#Se_lanza_un"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Biblioteca#Libro"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Biblioteca#Año_Lanzamiento"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#Produce_un -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Biblioteca#Produce_un">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Biblioteca#Editorial"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Biblioteca#Libro"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#Se_lanza_un -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Biblioteca#Se_lanza_un">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Biblioteca#Año_Lanzamiento"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Biblioteca#Libro"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#Tiene_un -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Biblioteca#Tiene_un">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/Biblioteca#le_pertenece_un"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Biblioteca#Libro"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Biblioteca#Tema"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#le_pertenece_un -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Biblioteca#le_pertenece_un">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Biblioteca#Tema"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Biblioteca#Libro"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#Año -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Biblioteca#Año">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Biblioteca#Año_Lanzamiento"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#Caracteristicas -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Biblioteca#Caracteristicas">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Biblioteca#Personajes"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#Codigo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Biblioteca#Codigo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Biblioteca#Libro"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#Copias -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Biblioteca#Copias">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Biblioteca#Libro"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#Edad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Biblioteca#Edad">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Biblioteca#Publico"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#Idioma -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Biblioteca#Idioma">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Biblioteca#Libro"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#Nacionalidad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Biblioteca#Nacionalidad">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Biblioteca#Persona"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#Puntuacion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Biblioteca#Puntuacion">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Biblioteca#Libro"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#Resumen -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Biblioteca#Resumen">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Biblioteca#Libro"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#Autor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Biblioteca#Autor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Biblioteca#Persona"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#Año_Lanzamiento -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Biblioteca#Año_Lanzamiento"/>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#Editorial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Biblioteca#Editorial"/>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#Libro -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Biblioteca#Libro"/>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#Persona -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Biblioteca#Persona"/>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#Personajes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Biblioteca#Personajes">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Biblioteca#Persona"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#Publico -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Biblioteca#Publico"/>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#Tema -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Biblioteca#Tema"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#Gabriel_garcia_marquez -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Biblioteca#Gabriel_garcia_marquez">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Biblioteca#Autor"/>
+        <Edad rdf:datatype="http://www.w3.org/2001/XMLSchema#string">45</Edad>
+        <Nacionalidad rdf:datatype="http://www.w3.org/2001/XMLSchema#string">España</Nacionalidad>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#Juan_Mavesoy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Biblioteca#Juan_Mavesoy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Biblioteca#Autor"/>
+        <Edad rdf:datatype="http://www.w3.org/2001/XMLSchema#string">65</Edad>
+        <Nacionalidad rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EEUU</Nacionalidad>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#Mario_Orozco -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Biblioteca#Mario_Orozco">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Biblioteca#Autor"/>
+        <Edad rdf:datatype="http://www.w3.org/2001/XMLSchema#string">23</Edad>
+        <Nacionalidad rdf:datatype="http://www.w3.org/2001/XMLSchema#language">Colombia</Nacionalidad>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#Martiniano_florencia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Biblioteca#Martiniano_florencia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Biblioteca#Editorial"/>
+        <Codigo rdf:datatype="http://www.w3.org/2001/XMLSchema#int">25</Codigo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#Miguel_de_cervantez -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Biblioteca#Miguel_de_cervantez">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Biblioteca#Autor"/>
+        <Edad rdf:datatype="http://www.w3.org/2001/XMLSchema#string">46</Edad>
+        <Nacionalidad rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chile</Nacionalidad>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#adolecentes -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Biblioteca#adolecentes">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Biblioteca#Publico"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#adultos -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Biblioteca#adultos">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Biblioteca#Publico"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#caminadas -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Biblioteca#caminadas">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Biblioteca#Libro"/>
+        <Apto_para rdf:resource="http://www.semanticweb.org/Biblioteca#jovenes"/>
+        <Escrito_por rdf:resource="http://www.semanticweb.org/Biblioteca#Juan_Mavesoy"/>
+        <Lanzado_en rdf:resource="http://www.semanticweb.org/Biblioteca#2016"/>
+        <Copias rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</Copias>
+        <Idioma rdf:datatype="http://www.w3.org/2001/XMLSchema#string">español</Idioma>
+        <Puntuacion rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</Puntuacion>
+        <Resumen rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Es una obra donde se puede consultar palabras o términos y se proporciona su significado, definición, etimología, ortografía, fija su pronunciación, separación silábica y forma gramatical.</Resumen>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#carsero -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Biblioteca#carsero">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Biblioteca#Personajes"/>
+        <Caracteristicas rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chistoso</Caracteristicas>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#casa_amarilla -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Biblioteca#casa_amarilla">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Biblioteca#Editorial"/>
+        <Codigo rdf:datatype="http://www.w3.org/2001/XMLSchema#int">21</Codigo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#casa_blanca -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Biblioteca#casa_blanca">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Biblioteca#Editorial"/>
+        <Codigo rdf:datatype="http://www.w3.org/2001/XMLSchema#int">22</Codigo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#chespirito -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Biblioteca#chespirito">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Biblioteca#Personajes"/>
+        <Caracteristicas rdf:datatype="http://www.w3.org/2001/XMLSchema#string">payaso</Caracteristicas>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#cien_años_de_soledad -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Biblioteca#cien_años_de_soledad">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Biblioteca#Libro"/>
+        <Apto_para rdf:resource="http://www.semanticweb.org/Biblioteca#jovenes"/>
+        <Escrito_por rdf:resource="http://www.semanticweb.org/Biblioteca#Gabriel_garcia_marquez"/>
+        <Lanzado_en rdf:resource="http://www.semanticweb.org/Biblioteca#2015"/>
+        <Copias rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</Copias>
+        <Idioma rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ingles</Idioma>
+        <Puntuacion rdf:datatype="http://www.w3.org/2001/XMLSchema#int">6</Puntuacion>
+        <Resumen rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Inspirado por un sueño durante su travesía en la selva, José Arcadio Buendía decide quedarse en ese punto del camino y fundar Macondo, pueblo que crece poco a poco. El pueblo recibe con frecuencia las visitas de los gitanos. Su líder, Melquíades, trae siempre artefactos y objetos que obsesionan a José Arcadio Buendía.</Resumen>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#comunicacion -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Biblioteca#comunicacion">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Biblioteca#Tema"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#consulta -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Biblioteca#consulta">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Biblioteca#Tema"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#diccionario -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Biblioteca#diccionario">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Biblioteca#Libro"/>
+        <Apto_para rdf:resource="http://www.semanticweb.org/Biblioteca#niños"/>
+        <Escrito_por rdf:resource="http://www.semanticweb.org/Biblioteca#Mario_Orozco"/>
+        <Lanzado_en rdf:resource="http://www.semanticweb.org/Biblioteca#2017"/>
+        <Copias rdf:datatype="http://www.w3.org/2001/XMLSchema#int">7</Copias>
+        <Idioma rdf:datatype="http://www.w3.org/2001/XMLSchema#string">español</Idioma>
+        <Puntuacion rdf:datatype="http://www.w3.org/2001/XMLSchema#int">9</Puntuacion>
+        <Resumen rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Te presentamos un breve RESUMEN del hermoso LIBRO de CARLOS FUENTES titulado como AURA, en este articulo conoceras un analisis y mas.</Resumen>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#editores_colombia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Biblioteca#editores_colombia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Biblioteca#Editorial"/>
+        <Codigo rdf:datatype="http://www.w3.org/2001/XMLSchema#int">23</Codigo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#jovenes -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Biblioteca#jovenes">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Biblioteca#Publico"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#juancho -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Biblioteca#juancho">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Biblioteca#Personajes"/>
+        <Caracteristicas rdf:datatype="http://www.w3.org/2001/XMLSchema#string">muy bueno</Caracteristicas>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#literatura -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Biblioteca#literatura">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Biblioteca#Tema"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#miedos_adversos -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Biblioteca#miedos_adversos">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Biblioteca#Libro"/>
+        <Apto_para rdf:resource="http://www.semanticweb.org/Biblioteca#adolecentes"/>
+        <Escrito_por rdf:resource="http://www.semanticweb.org/Biblioteca#victor_alfonso"/>
+        <Lanzado_en rdf:resource="http://www.semanticweb.org/Biblioteca#2019"/>
+        <Copias rdf:datatype="http://www.w3.org/2001/XMLSchema#int">6</Copias>
+        <Idioma rdf:datatype="http://www.w3.org/2001/XMLSchema#string">español</Idioma>
+        <Puntuacion rdf:datatype="http://www.w3.org/2001/XMLSchema#int">8</Puntuacion>
+        <Resumen rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La odisea es un poema épico que narra las aventuras de Odiseo, también conocido como Ulises, en su viaje de regreso a su patria, Ítaca, desde el momento en que finaliza la guerra de Troya, narrada en la Ilíada, hasta el momento en que finalmente vuelve a su hogar, muchos años después.</Resumen>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#mil_y_una_noche -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Biblioteca#mil_y_una_noche">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Biblioteca#Libro"/>
+        <Apto_para rdf:resource="http://www.semanticweb.org/Biblioteca#adolecentes"/>
+        <Escrito_por rdf:resource="http://www.semanticweb.org/Biblioteca#Miguel_de_cervantez"/>
+        <Lanzado_en rdf:resource="http://www.semanticweb.org/Biblioteca#2019"/>
+        <Copias rdf:datatype="http://www.w3.org/2001/XMLSchema#int">9</Copias>
+        <Idioma rdf:datatype="http://www.w3.org/2001/XMLSchema#string">frances</Idioma>
+        <Puntuacion rdf:datatype="http://www.w3.org/2001/XMLSchema#int">7</Puntuacion>
+        <Resumen rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Es la historia de la osada Scherezada y el Sultán Schariar, quien después de haber sido traicionado por su esposa y siendo testigo de varias infidelidades por parte de las mujeres, decreta que todos los días al atardecer se casara con una mujer diferente la cual será ejecutada la mañana</Resumen>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#niños -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Biblioteca#niños">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Biblioteca#Publico"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#organizaniones_en_literatura -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Biblioteca#organizaniones_en_literatura">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Biblioteca#Libro"/>
+        <Apto_para rdf:resource="http://www.semanticweb.org/Biblioteca#adultos"/>
+        <Escrito_por rdf:resource="http://www.semanticweb.org/Biblioteca#Mario_Orozco"/>
+        <Lanzado_en rdf:resource="http://www.semanticweb.org/Biblioteca#2018"/>
+        <Copias rdf:datatype="http://www.w3.org/2001/XMLSchema#int">6</Copias>
+        <Idioma rdf:datatype="http://www.w3.org/2001/XMLSchema#string">español</Idioma>
+        <Puntuacion rdf:datatype="http://www.w3.org/2001/XMLSchema#int">9</Puntuacion>
+        <Resumen rdf:datatype="http://www.w3.org/2001/XMLSchema#string">El principito es una narración corta del escritor francés Antoine de Saint-Exupéry, que trata de la historia de un pequeño príncipe que parte de su asteroide a una travesía por el universo, en la cual descubre la extraña forma en que los adultos ven la vida y comprende el valor del amor y la amistad.</Resumen>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#periodismo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Biblioteca#periodismo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Biblioteca#Tema"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#pinocho -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Biblioteca#pinocho">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Biblioteca#Personajes"/>
+        <Caracteristicas rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mentiroso</Caracteristicas>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#tecnologias_nuevos -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Biblioteca#tecnologias_nuevos">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Biblioteca#Libro"/>
+        <Apto_para rdf:resource="http://www.semanticweb.org/Biblioteca#adultos"/>
+        <Escrito_por rdf:resource="http://www.semanticweb.org/Biblioteca#victor_alfonso"/>
+        <Lanzado_en rdf:resource="http://www.semanticweb.org/Biblioteca#2017"/>
+        <Copias rdf:datatype="http://www.w3.org/2001/XMLSchema#int">6</Copias>
+        <Idioma rdf:datatype="http://www.w3.org/2001/XMLSchema#string">español</Idioma>
+        <Puntuacion rdf:datatype="http://www.w3.org/2001/XMLSchema#int">8</Puntuacion>
+        <Resumen rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La Tecnología se define como el conjunto de conocimientos y técnicas que, aplicados de forma lógica y ordenada, permiten al ser humano modificar su entorno material o virtual para satisfacer sus necesidades, esto es, un proceso combinado de pensamiento y acción con la finalidad de crear soluciones útiles.</Resumen>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#victor_alfonso -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Biblioteca#victor_alfonso">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Biblioteca#Autor"/>
+        <Edad rdf:datatype="http://www.w3.org/2001/XMLSchema#string">38</Edad>
+        <Nacionalidad rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Panama</Nacionalidad>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#viviendo_con_un_alcoholico -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Biblioteca#viviendo_con_un_alcoholico">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Biblioteca#Libro"/>
+        <Apto_para rdf:resource="http://www.semanticweb.org/Biblioteca#adultos"/>
+        <Escrito_por rdf:resource="http://www.semanticweb.org/Biblioteca#Gabriel_garcia_marquez"/>
+        <Lanzado_en rdf:resource="http://www.semanticweb.org/Biblioteca#2016"/>
+        <Copias rdf:datatype="http://www.w3.org/2001/XMLSchema#int">6</Copias>
+        <Idioma rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ingles</Idioma>
+        <Puntuacion rdf:datatype="http://www.w3.org/2001/XMLSchema#int">8</Puntuacion>
+        <Resumen rdf:datatype="http://www.w3.org/2001/XMLSchema#string">El Cantar de Mio Cid trata el tema del honor, un valor de gran importancia para la gente de la época. La necesidad de recuperar la honra perdida es lo que da impulso a las hazañas acometidas por el héroe. El poema se inicia con el destierro del Cid, primer motivo de deshonra, tras una acusación de robo.</Resumen>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#volar_sobre_el_pantano -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Biblioteca#volar_sobre_el_pantano">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Biblioteca#Libro"/>
+        <Apto_para rdf:resource="http://www.semanticweb.org/Biblioteca#adolecentes"/>
+        <Es_interpretada_por rdf:resource="http://www.semanticweb.org/Biblioteca#juancho"/>
+        <Es_producido_por rdf:resource="http://www.semanticweb.org/Biblioteca#Martiniano_florencia"/>
+        <Escrito_por rdf:resource="http://www.semanticweb.org/Biblioteca#Juan_Mavesoy"/>
+        <Lanzado_en rdf:resource="http://www.semanticweb.org/Biblioteca#2018"/>
+        <Copias rdf:datatype="http://www.w3.org/2001/XMLSchema#int">6</Copias>
+        <Idioma rdf:datatype="http://www.w3.org/2001/XMLSchema#string">español</Idioma>
+        <Puntuacion rdf:datatype="http://www.w3.org/2001/XMLSchema#int">6</Puntuacion>
+        <Resumen rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Volar sobre el pantano, es un libro de superación con toques crudos y una realidad que asola a distintas personas. Toca temas de adicción, desde el alcoholismo hasta el abuso de drogas.
+
+Además, toca temas como la violación y las consecuencias psicológicas, que puede dejar en los individuos que la sufren. Sumando, a su vez, como una familia poco funcional puede llevar a los más jóvenes a tomar malas decisiones.</Resumen>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#volatil -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Biblioteca#volatil">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Biblioteca#Libro"/>
+        <Apto_para rdf:resource="http://www.semanticweb.org/Biblioteca#adultos"/>
+        <Es_interpretada_por rdf:resource="http://www.semanticweb.org/Biblioteca#carsero"/>
+        <Es_producido_por rdf:resource="http://www.semanticweb.org/Biblioteca#editores_colombia"/>
+        <Escrito_por rdf:resource="http://www.semanticweb.org/Biblioteca#Gabriel_garcia_marquez"/>
+        <Lanzado_en rdf:resource="http://www.semanticweb.org/Biblioteca#2015"/>
+        <Copias rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</Copias>
+        <Idioma rdf:datatype="http://www.w3.org/2001/XMLSchema#string">frances</Idioma>
+        <Puntuacion rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</Puntuacion>
+        <Resumen rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Es una obra que está basada en la historia de la vida de un joven estudiante que tiene que pasar por una enfermedad de transmisión sexual para darse cuenta de que su vida sexual la lleva de manera equivocada, en el proceso de su tratamiento médico conoce a la que después se convierte en su esposa.</Resumen>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#2015 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Biblioteca#2015">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Biblioteca#Año_Lanzamiento"/>
+        <Año rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2016</Año>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#2016 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Biblioteca#2016">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Biblioteca#Año_Lanzamiento"/>
+        <Año rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2016</Año>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#2017 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Biblioteca#2017">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Biblioteca#Año_Lanzamiento"/>
+        <Año rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2017</Año>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#2018 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Biblioteca#2018">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Biblioteca#Año_Lanzamiento"/>
+        <Año rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2018</Año>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Biblioteca#2019 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Biblioteca#2019">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Biblioteca#Año_Lanzamiento"/>
+        <Año rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2019</Año>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
