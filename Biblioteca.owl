@@ -1,0 +1,465 @@
+@prefix : <http://www.semanticweb.org/Biblioteca#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix Biblioteca: <http://www.semanticweb.org/Biblioteca#> .
+@base <http://www.semanticweb.org/Biblioteca> .
+
+<http://www.semanticweb.org/Biblioteca> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/Biblioteca#Aparecen_en
+Biblioteca:Aparecen_en rdf:type owl:ObjectProperty ;
+                       rdfs:domain Biblioteca:Personajes ;
+                       rdfs:range Biblioteca:Libro .
+
+
+###  http://www.semanticweb.org/Biblioteca#Apto_para
+Biblioteca:Apto_para rdf:type owl:ObjectProperty ;
+                     rdfs:domain Biblioteca:Libro ;
+                     rdfs:range Biblioteca:Publico .
+
+
+###  http://www.semanticweb.org/Biblioteca#Es_interpretada_por
+Biblioteca:Es_interpretada_por rdf:type owl:ObjectProperty ;
+                               rdfs:domain Biblioteca:Libro ;
+                               rdfs:range Biblioteca:Personajes .
+
+
+###  http://www.semanticweb.org/Biblioteca#Es_producido_por
+Biblioteca:Es_producido_por rdf:type owl:ObjectProperty ;
+                            owl:inverseOf Biblioteca:Produce_un ;
+                            rdfs:domain Biblioteca:Libro ;
+                            rdfs:range Biblioteca:Editorial .
+
+
+###  http://www.semanticweb.org/Biblioteca#Escribe_un
+Biblioteca:Escribe_un rdf:type owl:ObjectProperty ;
+                      owl:inverseOf Biblioteca:Escrito_por ;
+                      rdfs:domain Biblioteca:Autor ;
+                      rdfs:range Biblioteca:Libro .
+
+
+###  http://www.semanticweb.org/Biblioteca#Escrito_por
+Biblioteca:Escrito_por rdf:type owl:ObjectProperty ;
+                       rdfs:domain Biblioteca:Libro ;
+                       rdfs:range Biblioteca:Autor .
+
+
+###  http://www.semanticweb.org/Biblioteca#Lanzado_en
+Biblioteca:Lanzado_en rdf:type owl:ObjectProperty ;
+                      owl:inverseOf Biblioteca:Se_lanza_un ;
+                      rdfs:domain Biblioteca:Libro ;
+                      rdfs:range Biblioteca:Año_Lanzamiento .
+
+
+###  http://www.semanticweb.org/Biblioteca#Produce_un
+Biblioteca:Produce_un rdf:type owl:ObjectProperty ;
+                      rdfs:domain Biblioteca:Editorial ;
+                      rdfs:range Biblioteca:Libro .
+
+
+###  http://www.semanticweb.org/Biblioteca#Se_lanza_un
+Biblioteca:Se_lanza_un rdf:type owl:ObjectProperty ;
+                       rdfs:domain Biblioteca:Año_Lanzamiento ;
+                       rdfs:range Biblioteca:Libro .
+
+
+###  http://www.semanticweb.org/Biblioteca#Tiene_un
+Biblioteca:Tiene_un rdf:type owl:ObjectProperty ;
+                    owl:inverseOf Biblioteca:le_pertenece_un ;
+                    rdfs:domain Biblioteca:Libro ;
+                    rdfs:range Biblioteca:Tema .
+
+
+###  http://www.semanticweb.org/Biblioteca#le_pertenece_un
+Biblioteca:le_pertenece_un rdf:type owl:ObjectProperty ;
+                           rdfs:domain Biblioteca:Tema ;
+                           rdfs:range Biblioteca:Libro .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/Biblioteca#Año
+Biblioteca:Año rdf:type owl:DatatypeProperty ;
+               rdfs:domain Biblioteca:Año_Lanzamiento ;
+               rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/Biblioteca#Caracteristicas
+Biblioteca:Caracteristicas rdf:type owl:DatatypeProperty ;
+                           rdfs:domain Biblioteca:Personajes ;
+                           rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/Biblioteca#Codigo
+Biblioteca:Codigo rdf:type owl:DatatypeProperty ;
+                  rdfs:domain Biblioteca:Libro ;
+                  rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/Biblioteca#Copias
+Biblioteca:Copias rdf:type owl:DatatypeProperty ;
+                  rdfs:domain Biblioteca:Libro ;
+                  rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/Biblioteca#Edad
+Biblioteca:Edad rdf:type owl:DatatypeProperty ;
+                rdfs:domain Biblioteca:Publico ;
+                rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/Biblioteca#Idioma
+Biblioteca:Idioma rdf:type owl:DatatypeProperty ;
+                  rdfs:domain Biblioteca:Libro ;
+                  rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/Biblioteca#Nacionalidad
+Biblioteca:Nacionalidad rdf:type owl:DatatypeProperty ;
+                        rdfs:domain Biblioteca:Persona ;
+                        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/Biblioteca#Puntuacion
+Biblioteca:Puntuacion rdf:type owl:DatatypeProperty ;
+                      rdfs:domain Biblioteca:Libro ;
+                      rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/Biblioteca#Resumen
+Biblioteca:Resumen rdf:type owl:DatatypeProperty ;
+                   rdfs:domain Biblioteca:Libro ;
+                   rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/Biblioteca#Autor
+Biblioteca:Autor rdf:type owl:Class ;
+                 rdfs:subClassOf Biblioteca:Persona .
+
+
+###  http://www.semanticweb.org/Biblioteca#Año_Lanzamiento
+Biblioteca:Año_Lanzamiento rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/Biblioteca#Editorial
+Biblioteca:Editorial rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/Biblioteca#Libro
+Biblioteca:Libro rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/Biblioteca#Persona
+Biblioteca:Persona rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/Biblioteca#Personajes
+Biblioteca:Personajes rdf:type owl:Class ;
+                      rdfs:subClassOf Biblioteca:Persona .
+
+
+###  http://www.semanticweb.org/Biblioteca#Publico
+Biblioteca:Publico rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/Biblioteca#Tema
+Biblioteca:Tema rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/Biblioteca#Gabriel_garcia_marquez
+Biblioteca:Gabriel_garcia_marquez rdf:type owl:NamedIndividual ,
+                                           Biblioteca:Autor ;
+                                  Biblioteca:Edad "45"^^xsd:string ;
+                                  Biblioteca:Nacionalidad "España"^^xsd:string .
+
+
+###  http://www.semanticweb.org/Biblioteca#Juan_Mavesoy
+Biblioteca:Juan_Mavesoy rdf:type owl:NamedIndividual ,
+                                 Biblioteca:Autor ;
+                        Biblioteca:Edad "65"^^xsd:string ;
+                        Biblioteca:Nacionalidad "EEUU"^^xsd:string .
+
+
+###  http://www.semanticweb.org/Biblioteca#Mario_Orozco
+Biblioteca:Mario_Orozco rdf:type owl:NamedIndividual ,
+                                 Biblioteca:Autor ;
+                        Biblioteca:Edad "23"^^xsd:string ;
+                        Biblioteca:Nacionalidad "Colombia"^^xsd:language .
+
+
+###  http://www.semanticweb.org/Biblioteca#Martiniano_florencia
+Biblioteca:Martiniano_florencia rdf:type owl:NamedIndividual ,
+                                         Biblioteca:Editorial ;
+                                Biblioteca:Codigo "25"^^xsd:int .
+
+
+###  http://www.semanticweb.org/Biblioteca#Miguel_de_cervantez
+Biblioteca:Miguel_de_cervantez rdf:type owl:NamedIndividual ,
+                                        Biblioteca:Autor ;
+                               Biblioteca:Edad "46"^^xsd:string ;
+                               Biblioteca:Nacionalidad "Chile"^^xsd:string .
+
+
+###  http://www.semanticweb.org/Biblioteca#adolecentes
+Biblioteca:adolecentes rdf:type owl:NamedIndividual ,
+                                Biblioteca:Publico .
+
+
+###  http://www.semanticweb.org/Biblioteca#adultos
+Biblioteca:adultos rdf:type owl:NamedIndividual ,
+                            Biblioteca:Publico .
+
+
+###  http://www.semanticweb.org/Biblioteca#caminadas
+Biblioteca:caminadas rdf:type owl:NamedIndividual ,
+                              Biblioteca:Libro ;
+                     Biblioteca:Apto_para Biblioteca:jovenes ;
+                     Biblioteca:Escrito_por Biblioteca:Juan_Mavesoy ;
+                     Biblioteca:Lanzado_en <http://www.semanticweb.org/Biblioteca#2016> ;
+                     Biblioteca:Copias "4"^^xsd:int ;
+                     Biblioteca:Idioma "español"^^xsd:string ;
+                     Biblioteca:Puntuacion "5"^^xsd:int ;
+                     Biblioteca:Resumen "Es una obra donde se puede consultar palabras o términos y se proporciona su significado, definición, etimología, ortografía, fija su pronunciación, separación silábica y forma gramatical."^^xsd:string .
+
+
+###  http://www.semanticweb.org/Biblioteca#carsero
+Biblioteca:carsero rdf:type owl:NamedIndividual ,
+                            Biblioteca:Personajes ;
+                   Biblioteca:Caracteristicas "chistoso"^^xsd:string .
+
+
+###  http://www.semanticweb.org/Biblioteca#casa_amarilla
+Biblioteca:casa_amarilla rdf:type owl:NamedIndividual ,
+                                  Biblioteca:Editorial ;
+                         Biblioteca:Codigo "21"^^xsd:int .
+
+
+###  http://www.semanticweb.org/Biblioteca#casa_blanca
+Biblioteca:casa_blanca rdf:type owl:NamedIndividual ,
+                                Biblioteca:Editorial ;
+                       Biblioteca:Codigo "22"^^xsd:int .
+
+
+###  http://www.semanticweb.org/Biblioteca#chespirito
+Biblioteca:chespirito rdf:type owl:NamedIndividual ,
+                               Biblioteca:Personajes ;
+                      Biblioteca:Caracteristicas "payaso"^^xsd:string .
+
+
+###  http://www.semanticweb.org/Biblioteca#cien_años_de_soledad
+Biblioteca:cien_años_de_soledad rdf:type owl:NamedIndividual ,
+                                         Biblioteca:Libro ;
+                                Biblioteca:Apto_para Biblioteca:jovenes ;
+                                Biblioteca:Escrito_por Biblioteca:Gabriel_garcia_marquez ;
+                                Biblioteca:Lanzado_en <http://www.semanticweb.org/Biblioteca#2015> ;
+                                Biblioteca:Copias "4"^^xsd:int ;
+                                Biblioteca:Idioma "ingles"^^xsd:string ;
+                                Biblioteca:Puntuacion "6"^^xsd:int ;
+                                Biblioteca:Resumen "Inspirado por un sueño durante su travesía en la selva, José Arcadio Buendía decide quedarse en ese punto del camino y fundar Macondo, pueblo que crece poco a poco. El pueblo recibe con frecuencia las visitas de los gitanos. Su líder, Melquíades, trae siempre artefactos y objetos que obsesionan a José Arcadio Buendía."^^xsd:string .
+
+
+###  http://www.semanticweb.org/Biblioteca#comunicacion
+Biblioteca:comunicacion rdf:type owl:NamedIndividual ,
+                                 Biblioteca:Tema .
+
+
+###  http://www.semanticweb.org/Biblioteca#consulta
+Biblioteca:consulta rdf:type owl:NamedIndividual ,
+                             Biblioteca:Tema .
+
+
+###  http://www.semanticweb.org/Biblioteca#diccionario
+Biblioteca:diccionario rdf:type owl:NamedIndividual ,
+                                Biblioteca:Libro ;
+                       Biblioteca:Apto_para Biblioteca:niños ;
+                       Biblioteca:Escrito_por Biblioteca:Mario_Orozco ;
+                       Biblioteca:Lanzado_en <http://www.semanticweb.org/Biblioteca#2017> ;
+                       Biblioteca:Copias "7"^^xsd:int ;
+                       Biblioteca:Idioma "español"^^xsd:string ;
+                       Biblioteca:Puntuacion "9"^^xsd:int ;
+                       Biblioteca:Resumen "Te presentamos un breve RESUMEN del hermoso LIBRO de CARLOS FUENTES titulado como AURA, en este articulo conoceras un analisis y mas."^^xsd:string .
+
+
+###  http://www.semanticweb.org/Biblioteca#editores_colombia
+Biblioteca:editores_colombia rdf:type owl:NamedIndividual ,
+                                      Biblioteca:Editorial ;
+                             Biblioteca:Codigo "23"^^xsd:int .
+
+
+###  http://www.semanticweb.org/Biblioteca#jovenes
+Biblioteca:jovenes rdf:type owl:NamedIndividual ,
+                            Biblioteca:Publico .
+
+
+###  http://www.semanticweb.org/Biblioteca#juancho
+Biblioteca:juancho rdf:type owl:NamedIndividual ,
+                            Biblioteca:Personajes ;
+                   Biblioteca:Caracteristicas "muy bueno"^^xsd:string .
+
+
+###  http://www.semanticweb.org/Biblioteca#literatura
+Biblioteca:literatura rdf:type owl:NamedIndividual ,
+                               Biblioteca:Tema .
+
+
+###  http://www.semanticweb.org/Biblioteca#miedos_adversos
+Biblioteca:miedos_adversos rdf:type owl:NamedIndividual ,
+                                    Biblioteca:Libro ;
+                           Biblioteca:Apto_para Biblioteca:adolecentes ;
+                           Biblioteca:Escrito_por Biblioteca:victor_alfonso ;
+                           Biblioteca:Lanzado_en <http://www.semanticweb.org/Biblioteca#2019> ;
+                           Biblioteca:Copias "6"^^xsd:int ;
+                           Biblioteca:Idioma "español"^^xsd:string ;
+                           Biblioteca:Puntuacion "8"^^xsd:int ;
+                           Biblioteca:Resumen "La odisea es un poema épico que narra las aventuras de Odiseo, también conocido como Ulises, en su viaje de regreso a su patria, Ítaca, desde el momento en que finaliza la guerra de Troya, narrada en la Ilíada, hasta el momento en que finalmente vuelve a su hogar, muchos años después."^^xsd:string .
+
+
+###  http://www.semanticweb.org/Biblioteca#mil_y_una_noche
+Biblioteca:mil_y_una_noche rdf:type owl:NamedIndividual ,
+                                    Biblioteca:Libro ;
+                           Biblioteca:Apto_para Biblioteca:adolecentes ;
+                           Biblioteca:Escrito_por Biblioteca:Miguel_de_cervantez ;
+                           Biblioteca:Lanzado_en <http://www.semanticweb.org/Biblioteca#2019> ;
+                           Biblioteca:Copias "9"^^xsd:int ;
+                           Biblioteca:Idioma "frances"^^xsd:string ;
+                           Biblioteca:Puntuacion "7"^^xsd:int ;
+                           Biblioteca:Resumen "Es la historia de la osada Scherezada y el Sultán Schariar, quien después de haber sido traicionado por su esposa y siendo testigo de varias infidelidades por parte de las mujeres, decreta que todos los días al atardecer se casara con una mujer diferente la cual será ejecutada la mañana"^^xsd:string .
+
+
+###  http://www.semanticweb.org/Biblioteca#niños
+Biblioteca:niños rdf:type owl:NamedIndividual ,
+                          Biblioteca:Publico .
+
+
+###  http://www.semanticweb.org/Biblioteca#organizaniones_en_literatura
+Biblioteca:organizaniones_en_literatura rdf:type owl:NamedIndividual ,
+                                                 Biblioteca:Libro ;
+                                        Biblioteca:Apto_para Biblioteca:adultos ;
+                                        Biblioteca:Escrito_por Biblioteca:Mario_Orozco ;
+                                        Biblioteca:Lanzado_en <http://www.semanticweb.org/Biblioteca#2018> ;
+                                        Biblioteca:Copias "6"^^xsd:int ;
+                                        Biblioteca:Idioma "español"^^xsd:string ;
+                                        Biblioteca:Puntuacion "9"^^xsd:int ;
+                                        Biblioteca:Resumen "El principito es una narración corta del escritor francés Antoine de Saint-Exupéry, que trata de la historia de un pequeño príncipe que parte de su asteroide a una travesía por el universo, en la cual descubre la extraña forma en que los adultos ven la vida y comprende el valor del amor y la amistad."^^xsd:string .
+
+
+###  http://www.semanticweb.org/Biblioteca#periodismo
+Biblioteca:periodismo rdf:type owl:NamedIndividual ,
+                               Biblioteca:Tema .
+
+
+###  http://www.semanticweb.org/Biblioteca#pinocho
+Biblioteca:pinocho rdf:type owl:NamedIndividual ,
+                            Biblioteca:Personajes ;
+                   Biblioteca:Caracteristicas "mentiroso"^^xsd:string .
+
+
+###  http://www.semanticweb.org/Biblioteca#tecnologias_nuevos
+Biblioteca:tecnologias_nuevos rdf:type owl:NamedIndividual ,
+                                       Biblioteca:Libro ;
+                              Biblioteca:Apto_para Biblioteca:adultos ;
+                              Biblioteca:Escrito_por Biblioteca:victor_alfonso ;
+                              Biblioteca:Lanzado_en <http://www.semanticweb.org/Biblioteca#2017> ;
+                              Biblioteca:Copias "6"^^xsd:int ;
+                              Biblioteca:Idioma "español"^^xsd:string ;
+                              Biblioteca:Puntuacion "8"^^xsd:int ;
+                              Biblioteca:Resumen "La Tecnología se define como el conjunto de conocimientos y técnicas que, aplicados de forma lógica y ordenada, permiten al ser humano modificar su entorno material o virtual para satisfacer sus necesidades, esto es, un proceso combinado de pensamiento y acción con la finalidad de crear soluciones útiles."^^xsd:string .
+
+
+###  http://www.semanticweb.org/Biblioteca#victor_alfonso
+Biblioteca:victor_alfonso rdf:type owl:NamedIndividual ,
+                                   Biblioteca:Autor ;
+                          Biblioteca:Edad "38"^^xsd:string ;
+                          Biblioteca:Nacionalidad "Panama"^^xsd:string .
+
+
+###  http://www.semanticweb.org/Biblioteca#viviendo_con_un_alcoholico
+Biblioteca:viviendo_con_un_alcoholico rdf:type owl:NamedIndividual ,
+                                               Biblioteca:Libro ;
+                                      Biblioteca:Apto_para Biblioteca:adultos ;
+                                      Biblioteca:Escrito_por Biblioteca:Gabriel_garcia_marquez ;
+                                      Biblioteca:Lanzado_en <http://www.semanticweb.org/Biblioteca#2016> ;
+                                      Biblioteca:Copias "6"^^xsd:int ;
+                                      Biblioteca:Idioma "ingles"^^xsd:string ;
+                                      Biblioteca:Puntuacion "8"^^xsd:int ;
+                                      Biblioteca:Resumen "El Cantar de Mio Cid trata el tema del honor, un valor de gran importancia para la gente de la época. La necesidad de recuperar la honra perdida es lo que da impulso a las hazañas acometidas por el héroe. El poema se inicia con el destierro del Cid, primer motivo de deshonra, tras una acusación de robo."^^xsd:string .
+
+
+###  http://www.semanticweb.org/Biblioteca#volar_sobre_el_pantano
+Biblioteca:volar_sobre_el_pantano rdf:type owl:NamedIndividual ,
+                                           Biblioteca:Libro ;
+                                  Biblioteca:Apto_para Biblioteca:adolecentes ;
+                                  Biblioteca:Es_interpretada_por Biblioteca:juancho ;
+                                  Biblioteca:Es_producido_por Biblioteca:Martiniano_florencia ;
+                                  Biblioteca:Escrito_por Biblioteca:Juan_Mavesoy ;
+                                  Biblioteca:Lanzado_en <http://www.semanticweb.org/Biblioteca#2018> ;
+                                  Biblioteca:Copias "6"^^xsd:int ;
+                                  Biblioteca:Idioma "español"^^xsd:string ;
+                                  Biblioteca:Puntuacion "6"^^xsd:int ;
+                                  Biblioteca:Resumen """Volar sobre el pantano, es un libro de superación con toques crudos y una realidad que asola a distintas personas. Toca temas de adicción, desde el alcoholismo hasta el abuso de drogas.
+
+Además, toca temas como la violación y las consecuencias psicológicas, que puede dejar en los individuos que la sufren. Sumando, a su vez, como una familia poco funcional puede llevar a los más jóvenes a tomar malas decisiones."""^^xsd:string .
+
+
+###  http://www.semanticweb.org/Biblioteca#volatil
+Biblioteca:volatil rdf:type owl:NamedIndividual ,
+                            Biblioteca:Libro ;
+                   Biblioteca:Apto_para Biblioteca:adultos ;
+                   Biblioteca:Es_interpretada_por Biblioteca:carsero ;
+                   Biblioteca:Es_producido_por Biblioteca:editores_colombia ;
+                   Biblioteca:Escrito_por Biblioteca:Gabriel_garcia_marquez ;
+                   Biblioteca:Lanzado_en <http://www.semanticweb.org/Biblioteca#2015> ;
+                   Biblioteca:Copias "4"^^xsd:int ;
+                   Biblioteca:Idioma "frances"^^xsd:string ;
+                   Biblioteca:Puntuacion "5"^^xsd:int ;
+                   Biblioteca:Resumen "Es una obra que está basada en la historia de la vida de un joven estudiante que tiene que pasar por una enfermedad de transmisión sexual para darse cuenta de que su vida sexual la lleva de manera equivocada, en el proceso de su tratamiento médico conoce a la que después se convierte en su esposa."^^xsd:string .
+
+
+###  http://www.semanticweb.org/Biblioteca#2015
+<http://www.semanticweb.org/Biblioteca#2015> rdf:type owl:NamedIndividual ,
+                                                      Biblioteca:Año_Lanzamiento ;
+                                             Biblioteca:Año "2016"^^xsd:int .
+
+
+###  http://www.semanticweb.org/Biblioteca#2016
+<http://www.semanticweb.org/Biblioteca#2016> rdf:type owl:NamedIndividual ,
+                                                      Biblioteca:Año_Lanzamiento ;
+                                             Biblioteca:Año "2016"^^xsd:int .
+
+
+###  http://www.semanticweb.org/Biblioteca#2017
+<http://www.semanticweb.org/Biblioteca#2017> rdf:type owl:NamedIndividual ,
+                                                      Biblioteca:Año_Lanzamiento ;
+                                             Biblioteca:Año "2017"^^xsd:int .
+
+
+###  http://www.semanticweb.org/Biblioteca#2018
+<http://www.semanticweb.org/Biblioteca#2018> rdf:type owl:NamedIndividual ,
+                                                      Biblioteca:Año_Lanzamiento ;
+                                             Biblioteca:Año "2018"^^xsd:int .
+
+
+###  http://www.semanticweb.org/Biblioteca#2019
+<http://www.semanticweb.org/Biblioteca#2019> rdf:type owl:NamedIndividual ,
+                                                      Biblioteca:Año_Lanzamiento ;
+                                             Biblioteca:Año "2019"^^xsd:int .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
